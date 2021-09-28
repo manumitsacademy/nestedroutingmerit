@@ -1,0 +1,7 @@
+<div class="todoclass">
+    <input type="text" [(ngModel)]="task">
+    <button (click)="addTask()">Add Task</button>
+    <ul>
+        <li *ngFor="let t of tasks">{{t}}</li>
+    </ul>
+</div>
