@@ -4,8 +4,10 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { DefaultpageComponent } from './defaultpage/defaultpage.component';
 import { HomeComponent } from './home/home.component';
+import { ProddetailsComponent } from './proddetails/proddetails.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { ProductlistComponent } from './productlist/productlist.component';
+import { ProductnestComponent } from './productnest/productnest.component';
 import { TodolistComponent } from './todolist/todolist.component';
 
 const routes: Routes = [ 
@@ -30,9 +32,20 @@ const routes: Routes = [
     component:ProductlistComponent
   },
   {
-    path:'productDetails',
+    path:'productDetails/:pid',
     component:ProductdetailsComponent
   },
+  {
+    path:'prodNest',
+    component:ProductnestComponent,
+    children:[
+      {
+        path:'proddetails/:id',
+        component:ProddetailsComponent
+      }
+    ]
+  },
+  
   {
     path:"",
     component:HomeComponent
